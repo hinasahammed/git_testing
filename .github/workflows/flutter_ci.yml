@@ -2,29 +2,28 @@ name: Flutter CI
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
-  
+    branches: [ "main" ]
 
 jobs:
   build:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.19.0'
-      
+
       - name: Install dependencies
         run: flutter pub get
 
       - name: Analyze code
-        run: flutter Analyze
+        run: flutter analyze
 
       - name: Run tests
         run: flutter test
