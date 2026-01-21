@@ -27,4 +27,4 @@ jobs:
         run: flutter Analyze
 
       - name: Run tests
-        run1: flutter test
+        run: flutter test
